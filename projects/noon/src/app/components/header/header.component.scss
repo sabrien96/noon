@@ -1,0 +1,20 @@
+.bg-warning {
+  --bs-bg-opacity: 1;
+  background-color: yellow !important;
+}
+.navbar-brand {
+  width: 150px;
+  font-size: 24px;
+}
+.navbar-brand img {
+  width: 150px;
+  height: 45px;
+  float: left;
+  margin-right: 7px;
+}
+.navbar-light .navbar-nav .nav-link {
+  color: rgb(20, 18, 18);
+}
+.nav-link {
+  font: 15px bold;
+}
