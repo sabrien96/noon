@@ -28,7 +28,8 @@
               "projects/noon/src/assets"
             ],
             "styles": [
-              "projects/noon/src/styles.scss"
+              "projects/noon/src/styles.scss",
+              "node_modules/font-awesome/css/font-awesome.css"
             ],
             "scripts": []
           },
@@ -95,9 +96,7 @@
               "projects/noon/src/favicon.ico",
               "projects/noon/src/assets"
             ],
-            "styles": [
-              "projects/noon/src/styles.scss"
-            ],
+            "styles": ["projects/noon/src/styles.scss"],
             "scripts": []
           }
         }
@@ -127,9 +126,7 @@
               "projects/admin/src/favicon.ico",
               "projects/admin/src/assets"
             ],
-            "styles": [
-              "projects/admin/src/styles.scss"
-            ],
+            "styles": ["projects/admin/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -195,9 +192,7 @@
               "projects/admin/src/favicon.ico",
               "projects/admin/src/assets"
             ],
-            "styles": [
-              "projects/admin/src/styles.scss"
-            ],
+            "styles": ["projects/admin/src/styles.scss"],
             "scripts": []
           }
         }
