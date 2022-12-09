@@ -1,0 +1,23 @@
+$bg-color: yellow;
+$text-nav-color: rgb(41, 41, 41);
+.bg-color {
+  background: $bg-color;
+}
+nav ul li a {
+  color: $text-nav-color;
+}
+.container-fluid {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.navbar-text .nav {
+  display: flex;
+  flex-wrap: nowrap;
+  font-weight: bold;
+  a:hover {
+    cursor: pointer;
+    // text-decoration: none;
+    opacity: 0.6;
+  }
+
+}

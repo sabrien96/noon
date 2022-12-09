@@ -1,0 +1,105 @@
+<nav class="navbar navbar-light bg-color">
+  <div class="container-fluid">
+    <a class="navbar-brand">
+      <img src="assets/noon-logo.png" alt="Avatar Logo" style="width: 120px"
+    /></a>
+    <form class="col-md-6">
+      <input
+        class="form-control"
+        type="text"
+        id="exampleFormControlInput1"
+        placeholder="What are you looking for?"
+      />
+    </form>
+    <div class="navbar-text">
+      <nav class="nav">
+        <a
+          class="nav-link"
+          aria-current="page"
+          [routerLink]="['/routePath']"
+          routerLinkActive="router-link-active"
+        >
+          <span> العربية </span>
+        </a>
+        <a
+          class="nav-link"
+          data-bs-toggle="modal"
+          data-bs-target="#staticBackdrop"
+        >
+          <i class="fa fa-sign-in" aria-hidden="true"></i>
+          Sign In
+        </a>
+        <a class="nav-link">
+          <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+          Cart
+        </a>
+      </nav>
+    </div>
+  </div>
+</nav>
+
+<div
+  class="modal fade"
+  id="staticBackdrop"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="staticBackdropLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+        <p>Welcome back!</p>
+        <h2>Sign in to your account</h2>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button type="button" class="btn btn-primary">Understood</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <nav class="navbar navbar-expand-sm navbar-light bg-color">
+  <div class="container-fluid">
+    <a class="navbar-brand me-3" href="javascript:void(0)">
+      <img
+        src="assets/noon-logo.png"
+        alt="Avatar Logo"
+        style="width: 120px"
+      />
+    </a>
+
+    <form class="d-flex" style="width: 60%">
+      <input
+        class="form-control"
+        type="text"
+        placeholder="What are you looking for?"
+      />
+    </form>
+
+    <ul class="nav">
+      <li class="nav-item">
+        <a class="nav-link" href="javascript:void(0)">العربية</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="javascript:void(0)"
+          ><i class="fa fa-sign-in" aria-hidden="true"></i> Sign In</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="javascript:void(0)"
+          ><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart</a
+        >
+      </li>
+    </ul>
+  </div>
+</nav> -->
