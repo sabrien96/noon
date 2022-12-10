@@ -57,13 +57,59 @@
           aria-label="Close"
         ></button>
         <p>Welcome back!</p>
-        <h2>Sign in to your account</h2>
+        <h4>Sign in to your account</h4>
+        <span>Don't have an account? <a href="#">Sign Up</a></span>
+        <form (ngSubmit)="save()" [formGroup]="signInform">
+          <div class="mb-3 mt-3">
+            <label for="email" class="form-label">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              placeholder="Enter email"
+              formControlName="email"
+              [ngClass]="{
+                'is-invalid':
+                  (signInform.get('email')?.touched ||
+                    signInform.get('email')?.dirty) &&
+                  !signInform.get('email')?.valid
+              }"
+            />
+            <span class="invalid-feedback">
+              <span *ngIf="signInform.get('email')?.errors?.['required']">
+                Please enter your email.
+              </span>
+            </span>
+          </div>
+          <div class="mb-3">
+            <label for="pwd" class="form-label">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="pwd"
+              placeholder="Enter password"
+              formControlName="password"
+              [ngClass]="{
+                'is-invalid':
+                  (signInform.get('password')?.touched ||
+                    signInform.get('password')?.dirty) &&
+                  !signInform.get('password')?.valid
+              }"
+            />
+            <span class="invalid-feedback">
+              <span *ngIf="signInform.get('password')?.errors?.['required']">
+                Please enter your password.
+              </span>
+            </span>
+          </div>
+        </form>
       </div>
+
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
           Close
         </button>
-        <button type="button" class="btn btn-primary" (click)="signIn()">
+        <button type="button" class="btn btn-primary" (click)="save()">
           Sign In
         </button>
       </div>

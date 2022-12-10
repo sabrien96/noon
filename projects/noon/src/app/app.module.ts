@@ -9,7 +9,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { MainHeaderComponent } from './components/header/main-header/main-header.component';
 import { NavBarComponent } from './components/header/nav-bar/nav-bar.component';
 import { HttpClientModule } from '@angular/common/http';
-
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +19,13 @@ import { HttpClientModule } from '@angular/common/http';
     MainHeaderComponent,
     NavBarComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
