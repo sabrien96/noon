@@ -58,8 +58,15 @@
         ></button>
         <p>Welcome back!</p>
         <h4>Sign in to your account</h4>
-        <span>Don't have an account? <a href="#">Sign Up</a></span>
-        <form (ngSubmit)="save()" [formGroup]="signInform">
+        <span
+          >Don't have an account?
+          <a href="#" (click)="changeForm()">Sign Up</a></span
+        >
+        <form
+          *ngIf="display; else signUp"
+          (ngSubmit)="save()"
+          [formGroup]="signInform"
+        >
           <div class="mb-3 mt-3">
             <label for="email" class="form-label">Email</label>
             <input
@@ -103,6 +110,94 @@
             </span>
           </div>
         </form>
+        <ng-template #signUp>
+          <form (ngSubmit)="save()" [formGroup]="signUnform">
+            <div class="mb-3 mt-3">
+              <label for="email" class="form-label">Email</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                placeholder="Enter email"
+                formControlName="email"
+                [ngClass]="{
+                  'is-invalid':
+                    (signInform.get('email')?.touched ||
+                      signInform.get('email')?.dirty) &&
+                    !signInform.get('email')?.valid
+                }"
+              />
+              <span class="invalid-feedback">
+                <span *ngIf="signInform.get('email')?.errors?.['required']">
+                  Please enter your email.
+                </span>
+              </span>
+            </div>
+            <div class="mb-3">
+              <label for="pwd" class="form-label">Password</label>
+              <input
+                type="password"
+                class="form-control"
+                id="pwd"
+                placeholder="Enter password"
+                formControlName="password"
+                [ngClass]="{
+                  'is-invalid':
+                    (signInform.get('password')?.touched ||
+                      signInform.get('password')?.dirty) &&
+                    !signInform.get('password')?.valid
+                }"
+              />
+              <span class="invalid-feedback">
+                <span *ngIf="signInform.get('password')?.errors?.['required']">
+                  Please enter your password.
+                </span>
+              </span>
+            </div>
+            <div class="mb-3">
+              <label for="firstName" class="form-label">first name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="firstName"
+                placeholder="Enter first name"
+                formControlName="firstName"
+                [ngClass]="{
+                  'is-invalid':
+                    (signInform.get('firstName')?.touched ||
+                      signInform.get('firstName')?.dirty) &&
+                    !signInform.get('firstName')?.valid
+                }"
+              />
+              <span class="invalid-feedback">
+                <span *ngIf="signInform.get('firstName')?.errors?.['required']">
+                  Please enter your first name.
+                </span>
+              </span>
+            </div>
+            <div class="mb-3">
+              <label for="lastName" class="form-label">last name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="lastName"
+                placeholder="Enter last name"
+                formControlName="lastName"
+                [ngClass]="{
+                  'is-invalid':
+                    (signInform.get('lastName')?.touched ||
+                      signInform.get('lastName')?.dirty) &&
+                    !signInform.get('lastName')?.valid
+                }"
+              />
+              <span class="invalid-feedback">
+                <span *ngIf="signInform.get('lastName')?.errors?.['required']">
+                  Please enter your last name.
+                </span>
+              </span>
+            </div>
+          </form>
+        </ng-template>
       </div>
 
       <div class="modal-footer">
