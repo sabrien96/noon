@@ -7,10 +7,13 @@ import { User } from '../models/user.model';
   providedIn: 'root'
 })
 export class AuthService {
-  authURL='http://localhost:8000/auth'
+  authURL='http://localhost:8000/api/'
   constructor(private httpClient: HttpClient) {}
 
   login(authenticate: User): Observable<any> {
-    return this.httpClient.post(`${this.authURL}login` , authenticate);
+    return this.httpClient.post(`${this.authURL}authenticate` , authenticate);
+  }
+  register(authenticate: User): Observable<any> {
+    return this.httpClient.post(`http://localhost:8000/api/register` , authenticate);
   }
 }

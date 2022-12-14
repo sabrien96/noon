@@ -37,7 +37,11 @@ export class MainHeaderComponent implements OnInit {
   }
 
   signIn() {
-    this.authServ.login(this.user).subscribe((response) => {
+    let user:User={
+      email:this.signInform.controls['email'].value,
+      password:this.signInform.controls['password'].value,
+    }
+    this.authServ.login(user).subscribe((response) => {
       console.log({ response });
     });
   }
